@@ -58,9 +58,9 @@ class Window(Frame):
                 print("Init sending file to Server")
                 print(fname)
 
-                print("Creating Hotspot")
-                subprocess.call("hotspotOn.sh")
-                print("Hotspot Created")
+                # print("Creating Hotspot")
+                # subprocess.call("hotspotOn.sh")
+                # print("Hotspot Created")
 
                 s = socket.socket()
 
@@ -86,7 +86,8 @@ class Window(Frame):
                 # Close the socket
                 s.close
 
-            except:
+            except Exception, arg:
+                print(arg)
                 showerror("Open Source File", "Failed to read file\n'%s'" % fname)
             return
 
